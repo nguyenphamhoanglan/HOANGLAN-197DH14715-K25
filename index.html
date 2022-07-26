@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles/index.processed.css" />
+  <title>HOANG LAN 😀</title>
+  <meta name="theme-color" content="#000">
+  <!--apple-specific pre 11.3-->
+  <meta name="apple-mobile-web-app-title" content="RGB Lens">
+  <meta name="Description" content="Turn your device into a magic lens for viewing RGB projects by Carnovsky">
+  <link rel="apple-touch-icon" href="icons/icon192.jpg">
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <meta property="og:url" content="https://rgb-lens.carnovsky.com/">
+  <meta property="og:title" content="RGB Lens - Carnovsky">
+  <meta property="og:image" content="https://rgb-lens.carnovsky.com/assets/sharing.png">
+  <meta property="og:description" content="Turn your device into a magic lens for viewing RGB projects by Carnovsky">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@_carnovsky_">
+</head>
+<body>
+  <div id="intro">
+    <div class="rgb-player">
+      <video playsinline></video>
+      <aside class="filter">
+        <div class="loading"></div>
+      </aside>
+      <nav>
+        <div>
+          <input type="radio" name="color" id="red" checked>
+          <label for="red">Red</label>
+        </div>
+        <div>
+          <input type="radio" name="color" id="green">
+          <label for="green">Green</label>
+        </div>
+        <div>
+          <input type="radio" name="color" id="blue">
+          <label for="blue">Blue</label>
+        </div>
+        <div id="chase-container">
+          <input type="radio" name="color" id="chase">
+          <label for="chase">Color Chase</label>
+        </div>
+        <div>
+          <button type="button" id="stop">
+            <svg viewBox="0 0 90 90">
+              <title>Stop Camera</title>
+              <line x1="10" y1="10" x2="80" y2="80" stroke="#fff" stroke-linecap="round" stroke-width="10"/>
+              <line x1="10" y1="80" x2="80" y2="10" stroke="#fff" stroke-linecap="round" stroke-width="10"/>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+    <h1>
+      <img src="assets/Bánh cốm_Nguyễn Phạm Hoàng Lan.jpg" alt="RGB Lens by Carnovsky"/>
+    </h1>
+    <p>I'm Hoang Lan ! webcome to my demo web app 😁&nbsp;viewing&nbsp;lens</p>
+    <div class="checking-support loading"></div>
+    <button type="button" id="launch-camera">
+      <svg viewBox="0 0 90 90">
+        <title>Launch Camera</title>
+        <circle cx="45" cy="45" r="35" stroke="#fff" stroke-width="10.5" fill="none" />
+        <polygon points="35,30 65,45 35,60" fill="#fff" stroke="none" />
+      </svg>
+    </button>
+    <a href="#more-info" class="modal-link get-more-info">More Info</a>
+  </div>
+  <div id="more-info" class="modal">
+    <div class="modal-content">
+      <img src="assets/carnovsky.svg" alt="Carnovsky logo"/>
+      <p>
+        <a href="https://carnovsky.com/RGB.htm" target="_blank" rel="noopener">Carnovsky</a> is a Milan based art and design duo formed by Silvia Quintanilla and Francesco Rugi.
+        Carnovsky’s best known project is called&nbsp;<a href="https://carnovsky.com/RGB.htm" target="_blank" rel="noopener">RGB</a>.
+      </p>
+      <p>RGB artworks interact and mutate with different chromatic stimulus.<br>
+      <p>
+        The superimposition of 3 different images, each one in a primary color,
+        results in unexpected and disorienting worlds where the colors mix up and the lines and shapes entwine becoming oneiric and not completely clear.
+        Through a colored filter it is possible to discover the layers in which the image is composed.
+      </p> 
+      <p>The filter’s colors are Red, Green and Blue, each one of them will reveal a different layer.</p>
+      <p>This app will transform your mobile device in a magical viewing lens to discovery and experience Carnovsky’s world</p>
+
+      <h2>Privacy Policy</h2>
+      <p>
+        When viewed on a device that supports camera access from a browser, the site will ask for permission to use the camera.
+        The video stream is only viewable by you when you enable the camera&nbsp;access.
+      </p>
+      <p>
+        We do not save any video to your phone, and no video (or any other information about the video or you) is sent to us.
+        Your privacy is important, so we keep&nbsp;it&nbsp;simple and do not collect any personal information.
+      </p>
+      <footer>
+        <p class="copyright">&copy; <span id="copy-year">2019</span> Carnovsky</p>
+        <p class="by">App built by <a href="https://danielcwilson.com" target="_blank" rel="noopener">Dan Wilson</a></p>
+      </footer>
+    </div>
+    <a href="#home" class="close">Close</a>
+  </div>
+  <div id="toast"><span></span></div>
+  <script>document.getElementById('copy-year').textContent = (new Date()).getFullYear();</script>
+  <script src="scripts/index.js"></script>
+</body>
+</html>
