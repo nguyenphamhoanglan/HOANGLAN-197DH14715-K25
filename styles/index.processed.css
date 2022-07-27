@@ -125,43 +125,53 @@ video {
 }
 
 @keyframes hue-rotate {
+
   0%,
   5% {
     filter: hue-rotate(0deg);
   }
+
   33%,
   38% {
     filter: hue-rotate(120deg);
   }
+
   67%,
   72% {
     filter: hue-rotate(240deg);
   }
+
   100% {
     filter: hue-rotate(360deg);
   }
 }
 
 @keyframes hue {
+
   0%,
   7%,
   100% {
     background-color: red;
   }
+
   19% {
     background-color: yellow;
   }
+
   32%,
   39% {
     background-color: lime;
   }
+
   52% {
     background-color: cyan;
   }
+
   66%,
   73% {
     background-color: blue;
   }
+
   86% {
     background-color: magenta;
   }
@@ -261,12 +271,15 @@ video {
     transition: opacity 250ms ease-in-out;
     opacity: 0;
   }
+
   h1 .g {
     background: lime;
   }
+
   h1 .b {
     background: blue;
   }
+
   h1 span:hover {
     opacity: 1;
   }
@@ -397,6 +410,7 @@ input:checked+label::before {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -563,6 +577,7 @@ input:checked+label::before {
 }
 
 @keyframes toaster {
+
   9%,
   91% {
     transform: translateY(0);
@@ -576,11 +591,13 @@ input:checked+label::before {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
+
 .canvas-fallback video {
   opacity: 0;
 }
+
 .canvas-fallback #chase-container {
   display: none;
 }

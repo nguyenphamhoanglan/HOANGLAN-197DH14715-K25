@@ -21,7 +21,7 @@ var messenger = document.getElementById('toast');
 var video = document.querySelector('video');
 if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia && navigator.mediaDevices.enumerateDevices) {
   navigator.mediaDevices.enumerateDevices()
-    .then(function(devices) {
+    .then(function (devices) {
       for (var i = 0, l = devices.length; i < l; ++i) {
         var device = devices[i];
         if (device.kind === 'videoinput') {
@@ -34,7 +34,7 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia && navigator.m
       showUnsupportedMessage()
       return false;
     })
-    .catch(function(err) {
+    .catch(function (err) {
       console.log(err.name + ": " + err.message);
       showUnsupportedMessage()
     });
@@ -49,7 +49,7 @@ function showUnsupportedMessage() {
 
 function playFromMedia(e) {
   navigator.mediaDevices.getUserMedia({
-    audio: false, 
+    audio: false,
     video: {
       facingMode: 'environment'
     }
@@ -57,10 +57,10 @@ function playFromMedia(e) {
     .catch(onFailedMediaStream);
 }
 function onSuccessfulMediaStream(stream) {
-  video.scrollIntoView({behavior: 'smooth'});
+  video.scrollIntoView({ behavior: 'smooth' });
   filterStream = stream;
   video.srcObject = stream;
-  video.onloadedmetadata = function(e) {
+  video.onloadedmetadata = function (e) {
     video.play();
     document.documentElement.classList.add('video-loaded');
 
@@ -83,14 +83,14 @@ function onFailedMediaStream(err) {
   }
   messenger.classList.add('active');
 }
-messenger.addEventListener('animationend', function(e) {
+messenger.addEventListener('animationend', function (e) {
   messenger.classList.remove('active');
 });
 
 //Change Filter
 var options = Array.from(document.querySelectorAll('input[type=radio]'));
-options.forEach(function(option) {
-  option.addEventListener('click', function(e) {
+options.forEach(function (option) {
+  option.addEventListener('click', function (e) {
     document.documentElement.setAttribute('data-filter', e.currentTarget.id);
     currentFilterColor = e.currentTarget.id;
   })
@@ -98,7 +98,7 @@ options.forEach(function(option) {
 
 //Stop Streaming
 var stopper = document.getElementById('stop');
-stopper.addEventListener('click', function(e) {
+stopper.addEventListener('click', function (e) {
   filterStream.getTracks()[0].stop();
   document.documentElement.classList.remove('streaming');
 });
@@ -113,7 +113,7 @@ function prepForCanvas() {
   videoCanvas.height = "480";
   elementParent.insertBefore(videoCanvas, elementAfter);
 
-  window.addEventListener('resize', updateCanvasDimensions);  
+  window.addEventListener('resize', updateCanvasDimensions);
 }
 function playVideoToCanvas(e) {
   drawCanvas();
@@ -126,14 +126,14 @@ function updateCanvasDimensions(e) {
 
   videoCanvas.style.height = (h / w * window.innerWidth) + 'px';
 }
-    
+
 function drawCanvas() {
   if (video.paused || video.ended) {
     return false;
   }
   context.fillStyle = 'white';
   context.fillRect(0, 0, w, h);
-  context.drawImage(video,0,0,w,h);
+  context.drawImage(video, 0, 0, w, h);
   context.globalCompositeOperation = 'multiply';
   context.fillStyle = currentFilterColor || '#ff0000';
   context.fillRect(0, 0, w, h);
